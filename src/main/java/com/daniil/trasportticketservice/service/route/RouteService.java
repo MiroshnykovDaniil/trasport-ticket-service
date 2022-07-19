@@ -1,10 +1,13 @@
 package com.daniil.trasportticketservice.service.route;
 
 import com.daniil.trasportticketservice.dto.RouteDestinationDto;
+import com.daniil.trasportticketservice.dto.TicketPriceDuration;
 import com.daniil.trasportticketservice.model.Destination;
 import com.daniil.trasportticketservice.model.Route;
 import com.daniil.trasportticketservice.model.RouteDestination;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 public interface RouteService {
@@ -21,6 +24,8 @@ public interface RouteService {
     Route updateDestination(Route route, RouteDestination destination);
 
     Route getRoute(String id);
+
+    TicketPriceDuration getRoutePriceDuration(Route route, RouteDestination departure, RouteDestination arrival);
 
 
 }

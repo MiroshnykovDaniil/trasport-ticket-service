@@ -1,5 +1,6 @@
 package com.daniil.trasportticketservice.service.route;
 
+import com.daniil.trasportticketservice.dto.TicketPriceDuration;
 import com.daniil.trasportticketservice.model.Destination;
 import com.daniil.trasportticketservice.model.Route;
 import com.daniil.trasportticketservice.model.RouteDestination;
@@ -8,6 +9,9 @@ import com.daniil.trasportticketservice.service.routeDestination.RouteDestinatio
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.time.Duration;
 import java.util.List;
 
 @Service
@@ -63,6 +67,20 @@ public class RouteServiceImpl implements RouteService{
     @Override
     public Route getRoute(String id) {
         return repository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public TicketPriceDuration getRoutePriceDuration(Route route, RouteDestination departure, RouteDestination arrival) {
+        route = getRoute(route.getId());
+        BigDecimal price = new BigDecimal("0");
+        Duration duration = Duration.ZERO;
+        for(int i = departure.getOrder(); i<arrival.getOrder();i++){
+            RouteDestination routeDestination = route.getRouteDestinations().get(i);
+            price = price.add(routeDestination.getPriceToArrive());
+            duration = duration.plus(routeDestination.getArriveDuration());
+        }
+        TicketPriceDuration ticketPriceDuration = new TicketPriceDuration(price,duration);
+        return ticketPriceDuration;
     }
 
 

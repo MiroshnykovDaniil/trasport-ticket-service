@@ -1,11 +1,16 @@
 package com.daniil.trasportticketservice.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity(name = "Ticket")
 @Table(name = "ticket")
+@Getter
+@Setter
 public class Ticket {
 
     @Id
@@ -18,9 +23,9 @@ public class Ticket {
     private Route route;
 
     @ManyToOne
-    private Destination destinationDeparture;
+    private RouteDestination destinationDeparture;
     @ManyToOne
-    private Destination destinationArrive;
+    private RouteDestination destinationArrive;
 
     private BigDecimal price;
 }
