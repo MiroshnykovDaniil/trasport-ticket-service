@@ -22,14 +22,14 @@ public class PassengerTypeServiceImpl implements PassengerTypeService{
 
     @Override
     public PassengerType updateDiscount(PassengerType passengerType, Integer discountPercentChanged) {
-        passengerType = repository.findById(passengerType.getId()).orElseThrow(() -> new ResourceNotFoundException("PassengerType:"+"id:"+id));
+        passengerType = get(passengerType.getId());
         passengerType.setDiscountPercent(discountPercentChanged);
         return repository.save(passengerType);
     }
 
     @Override
     public PassengerType removeDiscount(PassengerType passengerType) {
-        passengerType = repository.findById(passengerType.getId()).orElseThrow(() -> new ResourceNotFoundException("PassengerType:"+"id:"+id));
+        passengerType = get(passengerType.getId());
         passengerType.setDiscountPercent(0);
         return repository.save(passengerType);
     }
