@@ -25,4 +25,5 @@ class DestinationTest {
         destinationRepository.save(destination);
         assertThat(destinationRepository.findByTitle("Kyiv")).isNotNull();
     }
+
 }
