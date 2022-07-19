@@ -12,15 +12,4 @@ public class RouteDestinationDto {
     private Integer order;
 
 
-//    public static class Mapper{
-//        RouteDestination routeDestinationFromDto(RouteDestinationDto dto){
-//            RouteDestination routeDestination = new RouteDestination();
-//            routeDestination.setDestination(dto.destination);
-//            routeDestination.setPriceToArrive(dto.priceToArrive);
-//            routeDestination.setArriveDuration(dto.);
-//
-//        }
-//    }
-
-
 }

@@ -15,8 +15,8 @@ public class RouteServiceImpl implements RouteService{
 
     @Autowired
     private RouteRepository repository;
-    @Autowired
-    private RouteDestinationService routeDestinationService;
+//    @Autowired
+//    private RouteDestinationService routeDestinationService;
 
     @Override
     public Route createRoute(Destination departure, Destination arrival, List<RouteDestination> destinations) {

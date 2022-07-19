@@ -35,14 +35,5 @@ public class Account {
         return Objects.hash(id, name, passengerType);
     }
 
-    //    @Column(name = "is_child")
-//    private Boolean isChild;
-//
-//    @Column(name = "is_student")
-//    private Boolean isStudent;
-//
-//    @Column(name = "is_senior")
-//    private Boolean isSenior;
-
 
 }
