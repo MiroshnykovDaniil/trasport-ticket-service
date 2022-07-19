@@ -5,10 +5,12 @@ import com.daniil.trasportticketservice.model.Route;
 import com.daniil.trasportticketservice.model.RouteDestination;
 import com.daniil.trasportticketservice.repository.RouteDestinationRepository;
 import com.daniil.trasportticketservice.service.route.RouteService;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Service
 public class RouteDestinationServiceImpl implements RouteDestinationService{
 
     private RouteService routeService;
@@ -30,6 +32,11 @@ public class RouteDestinationServiceImpl implements RouteDestinationService{
         routeService.addDestination(route,routeDestination);
 
         return null;
+    }
+
+    @Override
+    public List<RouteDestination> getRouteDestinations(Route route) {
+        return routeDestinationRepository.findByRoute(route);
     }
 
     public void addToPosition(Route route, RouteDestination destination, Integer position){

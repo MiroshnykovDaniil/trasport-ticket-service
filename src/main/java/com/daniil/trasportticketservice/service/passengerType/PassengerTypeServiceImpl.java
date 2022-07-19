@@ -21,15 +21,15 @@ public class PassengerTypeServiceImpl implements PassengerTypeService{
     }
 
     @Override
-    public PassengerType updateDiscount(String id, Integer discountPercentChanged) {
-        PassengerType passengerType = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("PassengerType:"+"id:"+id));
+    public PassengerType updateDiscount(PassengerType passengerType, Integer discountPercentChanged) {
+        passengerType = repository.findById(passengerType.getId()).orElseThrow(() -> new ResourceNotFoundException("PassengerType:"+"id:"+id));
         passengerType.setDiscountPercent(discountPercentChanged);
         return repository.save(passengerType);
     }
 
     @Override
-    public PassengerType removeDiscount(String id) {
-        PassengerType passengerType = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("PassengerType:"+"id:"+id));
+    public PassengerType removeDiscount(PassengerType passengerType) {
+        passengerType = repository.findById(passengerType.getId()).orElseThrow(() -> new ResourceNotFoundException("PassengerType:"+"id:"+id));
         passengerType.setDiscountPercent(0);
         return repository.save(passengerType);
     }
@@ -40,7 +40,7 @@ public class PassengerTypeServiceImpl implements PassengerTypeService{
     }
 
     @Override
-    public void delete(String id) {
-        repository.deleteById(id);
+    public void delete(PassengerType passengerType) {
+        repository.deleteById(passengerType.getId());
     }
 }

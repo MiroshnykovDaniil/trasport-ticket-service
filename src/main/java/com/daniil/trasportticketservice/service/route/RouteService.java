@@ -18,7 +18,7 @@ public interface RouteService {
 
     Route removeDestination(Route route, RouteDestination destination);
 
-    Route updateDestination(String id, RouteDestination destination);
+    Route updateDestination(Route route, RouteDestination destination);
 
     Route getRoute(String id);
 

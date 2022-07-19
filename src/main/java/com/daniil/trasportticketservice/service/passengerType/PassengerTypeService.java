@@ -6,11 +6,11 @@ public interface PassengerTypeService {
 
     PassengerType create(String title, Integer discountPercent);
 
-    PassengerType updateDiscount(String id, Integer discountPercentChanged);
+    PassengerType updateDiscount(PassengerType passengerType, Integer discountPercentChanged);
 
-    PassengerType removeDiscount(String id);
+    PassengerType removeDiscount(PassengerType passengerType);
 
     PassengerType get(String id);
 
-    void delete(String id);
+    void delete(PassengerType passengerType);
 }

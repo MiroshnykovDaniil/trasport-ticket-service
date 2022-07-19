@@ -11,6 +11,6 @@ public interface RouteDestinationService {
 
     RouteDestination add(Route route, Destination destination, BigDecimal priceToArrive);
 
-    //List<RouteDestination>
+    List<RouteDestination> getRouteDestinations(Route route);
 
 }
