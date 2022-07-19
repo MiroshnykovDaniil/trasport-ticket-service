@@ -1,13 +1,11 @@
 package com.daniil.trasportticketservice.service.ticketService;
 
-import com.daniil.trasportticketservice.model.Account;
 import com.daniil.trasportticketservice.model.Ticket;
 import com.daniil.trasportticketservice.repository.TicketRepository;
 import com.daniil.trasportticketservice.requests.TicketCreateRequest;
 import com.daniil.trasportticketservice.service.route.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
 
 public class TicketServiceImpl implements TicketService {
 

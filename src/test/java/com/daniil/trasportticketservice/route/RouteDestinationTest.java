@@ -46,11 +46,11 @@ public class RouteDestinationTest {
 
         List<RouteDestination> routeDestinations;
         departure = new Destination();
-        departure.setTitle("Kharkiv");
+        departure.setTitle("Lviv");
         arrive = new Destination();
-        arrive.setTitle("Kyiv");
+        arrive.setTitle("Odesa");
         destination = new Destination();
-        destination.setTitle("Poltava");
+        destination.setTitle("Dnipro");
         destinationRepository.saveAll(List.of(departure,destination,arrive));
         departure = destinationRepository.findByTitle("Kharkiv");
         arrive = destinationRepository.findByTitle("Kyiv");

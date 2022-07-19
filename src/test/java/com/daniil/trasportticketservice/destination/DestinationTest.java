@@ -21,9 +21,9 @@ class DestinationTest {
     @Test
     void createTest(){
         Destination destination = new Destination();
-        destination.setTitle("Kyiv");
+        destination.setTitle("City");
         destinationRepository.save(destination);
-        assertThat(destinationRepository.findByTitle("Kyiv")).isNotNull();
+        assertThat(destinationRepository.findByTitle("City")).isNotNull();
     }
 
 }
