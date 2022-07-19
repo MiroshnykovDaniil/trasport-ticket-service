@@ -1,6 +1,7 @@
 package com.daniil.trasportticketservice.destination;
 
 import com.daniil.trasportticketservice.model.Destination;
+import com.daniil.trasportticketservice.model.Route;
 import com.daniil.trasportticketservice.repository.DestinationRepository;
 import com.daniil.trasportticketservice.service.destination.DestinationService;
 import com.daniil.trasportticketservice.service.destination.DestinationServiceImpl;
@@ -34,4 +35,5 @@ public class DestinationServiceTests {
         Destination created = destinationService.addDestination(title);
         assertThat(created.getTitle()).isSameAs(title);
     }
+
 }

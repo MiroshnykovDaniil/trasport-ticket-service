@@ -41,6 +41,6 @@ public class PassengerTypeServiceImpl implements PassengerTypeService{
 
     @Override
     public void delete(PassengerType passengerType) {
-        repository.deleteById(passengerType.getId());
+        repository.delete(passengerType);
     }
 }
