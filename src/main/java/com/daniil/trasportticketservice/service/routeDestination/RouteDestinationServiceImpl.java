@@ -5,6 +5,7 @@ import com.daniil.trasportticketservice.model.Route;
 import com.daniil.trasportticketservice.model.RouteDestination;
 import com.daniil.trasportticketservice.repository.RouteDestinationRepository;
 import com.daniil.trasportticketservice.service.route.RouteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -12,9 +13,9 @@ import java.util.List;
 
 @Service
 public class RouteDestinationServiceImpl implements RouteDestinationService{
-
+    @Autowired
     private RouteService routeService;
-
+    @Autowired
     private RouteDestinationRepository routeDestinationRepository;
 
 
